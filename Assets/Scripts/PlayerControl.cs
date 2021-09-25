@@ -17,6 +17,8 @@ public class PlayerControl : MonoBehaviour
     public Vector3 Offset1 = new Vector3(0.35f, 0.4f, 0);
     public Vector3 Offset2 = new Vector3(-0.35f, 0.4f, 0);
 
+    public float FireError = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +60,8 @@ public class PlayerControl : MonoBehaviour
         GameObject clone = Instantiate(Laser, spawnPos, transform.rotation);
         //set the speed of the clone
         Rigidbody2D cloneRb = clone.GetComponent<Rigidbody2D>();
-        cloneRb.velocity = transform.up * LaserSpeed;
+        cloneRb.velocity = transform.up * LaserSpeed + transform.right * Random.Range(-FireError, FireError);
+        cloneRb.velocity += myRb.velocity;
     }
 
 }
