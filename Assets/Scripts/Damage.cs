@@ -21,7 +21,7 @@ public class Damage : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         //make sure there is a health component
-        Health h = collision.otherCollider.GetComponent<Health>();
+        Health h = collision.gameObject.GetComponent<Health>();
         if (h != null)
         {
             h.ChangeHealth(-Amount);
