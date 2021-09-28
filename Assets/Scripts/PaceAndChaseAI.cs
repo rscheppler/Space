@@ -44,6 +44,7 @@ public class PaceAndChaseAI : MonoBehaviour
         }
         else
         {
+            Target = FindObjectOfType<PlayerControl>().gameObject;
             Pace();
         }
     }
