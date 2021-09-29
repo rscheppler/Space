@@ -19,10 +19,16 @@ public class PlayerControl : MonoBehaviour
 
     public float FireError = 1f;
 
+    //screen shake things
+    FollowingCamera FC;
+    public float FireShakeTime = 0.1f;
+    public float FireShakeMagnitude = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
         myRb = GetComponent<Rigidbody2D>();
+        FC = FindObjectOfType<FollowingCamera>();
     }
 
     //fixed update runs on physics times
@@ -50,6 +56,7 @@ public class PlayerControl : MonoBehaviour
             //fire the lasers
             Fire(Offset1);
             Fire(Offset2);
+            FC.TriggerShake(FireShakeTime, FireShakeMagnitude);
         }
     }
     //spawns one object with an offset from the spawner

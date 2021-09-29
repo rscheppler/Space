@@ -9,6 +9,22 @@ public class FollowingCamera : MonoBehaviour
     [Tooltip("Set between 0 and one kinda how fast it moves to the target"), Range(0,1)]
     public float LerpVal = 0.8f;
 
+    float ShakeTime = 0;
+    float ShakeMagnitude = 0;
+    //call this function to make the screen shake
+    public void TriggerShake( float time, float magnitude)
+    {
+        if(ShakeTime < time)
+        {
+            ShakeTime = time;
+        }
+        if(ShakeMagnitude < magnitude)
+        {
+            ShakeMagnitude = magnitude;
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +41,26 @@ public class FollowingCamera : MonoBehaviour
             //lerp towards the target to make a smoothing effect in the movement
             transform.position = Vector3.Lerp(transform.position, newPos, LerpVal);
         }
+
+        if(ShakeTime > 0)
+        {
+            ShakeTime -= Time.fixedDeltaTime;
+            Vector3 randDir = Random.insideUnitCircle * ShakeMagnitude;
+            transform.position += randDir;
+        }
+        else 
+        {
+            ShakeMagnitude = 0;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //just for testing
+        //if(Input.GetKeyDown(KeyCode.F))
+        //{
+       //     TriggerShake(0.2f, 0.2f);
+        //}
     }
 }
