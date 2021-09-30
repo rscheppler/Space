@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3949778913958171582}
   - component: {fileID: -6554615066504363467}
   - component: {fileID: 5022020827375348358}
+  - component: {fileID: 8823462344628885867}
   m_Layer: 8
   m_Name: Laser
   m_TagString: Untagged
@@ -176,3 +177,18 @@ MonoBehaviour:
   ObjectToMake: {fileID: 1817145765962302033, guid: 319dc2eac0067a748af6283e9d00284f, type: 3}
   Offset: {x: 0, y: 0, z: 0}
   RandOffset: 0
+--- !u!114 &8823462344628885867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699895014440573872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4313b0570e6dae44832e9b130fcb6d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []

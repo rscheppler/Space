@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6419532911976827154}
   - component: {fileID: 7928615575572171727}
   - component: {fileID: 7281535571696156363}
+  - component: {fileID: -6199917043234072441}
   m_Layer: 0
   m_Name: LaserBlast
   m_TagString: Untagged
@@ -112,3 +113,18 @@ MonoBehaviour:
   ObjectToMake: {fileID: 8772996085834490286, guid: be5e9f3155d057a408a3baac64ba06f4, type: 3}
   Offset: {x: 0, y: 0, z: 0}
   RandOffset: 0
+--- !u!114 &-6199917043234072441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817145765962302033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4313b0570e6dae44832e9b130fcb6d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
